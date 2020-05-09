@@ -7,33 +7,35 @@ services:
       context: ./Addresses
       dockerfile: Dockerfile
     volumes:
-      - /usr/src/app/node_modules
-      - ./Addresses:/usr/src/app
+      - /app/node_modules
+      - ./Addresses:/app
     environment:
       CHOKIDAR_USEPOLLING: "true"
     ports:
       - "5001:5000"
-      # <outside port exposed to world>:<internal port>
+      # <port exposed to world>:<internal port>
+
   leads:
     container_name: leads
     build:
       context: ./Leads
       dockerfile: Dockerfile
     volumes:
-      - /usr/src/app/node_modules
-      - ./Leads:/usr/src/app
+      - /app/node_modules
+      - ./Leads:/app
     environment:
       CHOKIDAR_USEPOLLING: "true"
     ports:
       - "5002:5000"
+
   people:
     container_name: people
     build:
       context: ./People
       dockerfile: Dockerfile
     volumes:
-      - /usr/src/app/node_modules
-      - ./People:/usr/src/app
+      - /app/node_modules
+      - ./People:/app
     environment:
       CHOKIDAR_USEPOLLING: "true"
     ports:

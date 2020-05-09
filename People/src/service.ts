@@ -1,5 +1,5 @@
 import express from "express";
-import { Server } from "../Common/Server";
+import { Server } from "../../Common/Server";
 import { GetPeopleRouting } from "./Routing/GetPeopleRouting";
 import { SavePeopleRouting } from "./Routing/SavePeopleRouting";
 

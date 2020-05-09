@@ -1,11 +1,17 @@
 FROM node:8
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY . .
+COPY package*.json ./
+
+COPY tsconfig*.json ./
 
 RUN npm install
 
+COPY ./ ./
+
+RUN npm run postinstall
+
 EXPOSE 5000
 
-CMD ["npm", "run", "start"]
+CMD [ "npm", "run", "start" ]

@@ -1,5 +1,5 @@
 import express from "express";
-import { Server } from "../Common/Server";
+import { Server } from "../../Common/Server";
 import { GetLeadsRouting } from "./Routing/GetLeadsRouting";
 import { SaveLeadsRouting } from "./Routing/SaveLeadsRouting";
 
